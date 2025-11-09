@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Redirect to main domain
+RewriteCond %{HTTP_HOST} ^(www\.)?betpuanpromo\.info$ [NC]
+RewriteRule ^(.*)$ https://betpuan.co/$1 [R=301,L]
